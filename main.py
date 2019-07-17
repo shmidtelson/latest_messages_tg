@@ -64,9 +64,8 @@ with TelegramClient(os.getenv("NAME"), os.getenv("APP_ID"), os.getenv("API_HASH"
             'name': f'{user["user"]["first_name"]} {user["user"]["last_name"]}',
             'message': message.message,
             'date': local_dt.strftime('%Y-%m-%d %H:%I:%S'),
-            'image_path': filepath,
-            'user_id': user["user"]["id"]
+            'image_path': filepath
         })
-
+    result = list(reversed(result))
     with open(os.path.join(PATH_TO_EXPORT_DATA, 'latest_tg_messages.json'), 'w') as fm:
         fm.write(json.dumps(result))
