@@ -56,7 +56,7 @@ with TelegramClient(os.getenv("NAME"), os.getenv("APP_ID"), os.getenv("API_HASH"
             max_id=0,
             limit=1
         ))
-        print(photo.photos[0])
+  
         filepath = f'images/{user["user"]["id"]}.jpg'
         client.download_media(photo.photos[0], os.path.join(PATH_TO_EXPORT_DATA, filepath))
 

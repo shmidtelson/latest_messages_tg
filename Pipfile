@@ -9,6 +9,7 @@ verify_ssl = true
 telethon = "*"
 python-dotenv = "*"
 pillow = "*"
+pytz = "*"
 
 [requires]
 python_version = "3.7"
