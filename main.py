@@ -26,8 +26,7 @@ clear_images(os.path.join(PATH_TO_EXPORT_DATA, 'images'))
 
 with TelegramClient(os.getenv("NAME"), os.getenv("APP_ID"), os.getenv("API_HASH")) as client:
     # GET CHANNEL ENTITY
-    channel_username = 'ge_chat'  # your channel
-    channel_entity = client.get_entity(channel_username)
+    channel_entity = client.get_entity(os.getenv("GROUP_NAME"))
     # GET HISTORY
     messages = client(GetHistoryRequest(
         peer=channel_entity,
