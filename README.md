@@ -1,6 +1,3 @@
-# Auto update profile telegram
+# Parsing latest messages from telegram 
 
-Random First name
-Random Last name
-Random About
-Random Avatar by cats api
+save avatars in folder images
