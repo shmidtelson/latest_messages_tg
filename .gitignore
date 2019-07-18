@@ -4,3 +4,4 @@
 Pipfile.lock
 /images
 *.json
+*.pyc
