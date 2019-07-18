@@ -1,12 +1,12 @@
 import os
 import pytz
 import json
-from telethon import  functions
+from telethon import functions
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
+from settings import PATH_TO_EXPORT_DATA, GROUP_NAME
 
-PATH_TO_EXPORT_DATA = os.getenv("PATH_TO_EXPORT_DATA")
 
 def get_latest_news(client):
     def clear_images(folder):
@@ -22,7 +22,7 @@ def get_latest_news(client):
 
 
     # GET CHANNEL ENTITY
-    channel_entity = client.get_entity(os.getenv("GROUP_NAME"))
+    channel_entity = client.get_entity(GROUP_NAME)
     # GET HISTORY
     messages = client(GetHistoryRequest(
         peer=channel_entity,

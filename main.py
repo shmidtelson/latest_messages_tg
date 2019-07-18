@@ -1,13 +1,12 @@
 import os
 import schedule
 import time
-from dotenv import load_dotenv
 from telethon import TelegramClient
 from modules.latest_news_tg import get_latest_news
 from modules.update_profile import run_update_profile
-load_dotenv()
+from settings import NAME, APP_ID, API_HASH
 
-client = TelegramClient(os.getenv("NAME"), os.getenv("APP_ID"), os.getenv("API_HASH"))
+client = TelegramClient(NAME, APP_ID, API_HASH)
 
 get_latest_news(client)
 
