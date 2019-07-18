@@ -2,7 +2,6 @@ import os
 import shutil
 import requests
 from faker import Faker
-
 from telethon import functions
 from telethon.tl.functions.account import UpdateProfileRequest
 
@@ -10,7 +9,7 @@ from settings import APP_PATH
 
 PATH_TO_IMAGE = os.path.join(APP_PATH, 'ava.jpg')
 
-def run_update_profile(client):
+def run_update_profile():
     # CHANGE PROFILE
     fake = Faker()
     client(UpdateProfileRequest(

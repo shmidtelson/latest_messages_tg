@@ -7,11 +7,10 @@ verify_ssl = true
 
 [packages]
 telethon = "*"
-python-dotenv = "*"
-pillow = "*"
 pytz = "*"
-faker = "*"
+python-dotenv = "*"
 requests = "*"
+faker = "*"
 schedule = "*"
 
 [requires]

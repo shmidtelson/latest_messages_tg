@@ -5,26 +5,23 @@ from telethon import functions
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
+from modules.client import client
 from settings import PATH_TO_EXPORT_DATA, GROUP_NAME
 
 
-def get_latest_news(client):
-    def clear_images(folder):
-        for the_file in os.listdir(folder):
-            file_path = os.path.join(folder, the_file)
-            try:
-                if os.path.isfile(file_path):
-                    os.unlink(file_path)
-            except Exception as e:
-                print(e)
-
-    clear_images(os.path.join(PATH_TO_EXPORT_DATA, 'images'))
-
+def get_latest_news():
+    for the_file in os.listdir(os.path.join(PATH_TO_EXPORT_DATA, 'images')):
+        file_path = os.path.join(os.path.join(PATH_TO_EXPORT_DATA, 'images'), the_file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)
 
     # GET CHANNEL ENTITY
     channel_entity = client.get_entity(GROUP_NAME)
     # GET HISTORY
-    messages = client(GetHistoryRequest(
+    m = client(GetHistoryRequest(
         peer=channel_entity,
         limit=15,
         offset_date=None,
@@ -34,10 +31,11 @@ def get_latest_news(client):
         add_offset=0,
         hash=0
     ))
+    print(channel_entity)
     result = []
-    for message in messages.messages:
+    for message in m.messages:
         date = message.date
-        local_tz = pytz.timezone('Europe/Minsk')
+        local_tz = pytz.timezone('Euroe/Minsk')
         local_dt = date.replace(tzinfo=pytz.utc).astimezone(local_tz)
 
         user = client(GetFullUserRequest(
