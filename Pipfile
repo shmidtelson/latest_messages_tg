@@ -10,6 +10,9 @@ telethon = "*"
 python-dotenv = "*"
 pillow = "*"
 pytz = "*"
+faker = "*"
+requests = "*"
+schedule = "*"
 
 [requires]
 python_version = "3.7"
