@@ -1,7 +1,7 @@
 import os
 import pytz
 import json
-from telethon import functions
+from telethon import TelegramClient, functions, sync
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
@@ -31,11 +31,10 @@ def get_latest_news():
         add_offset=0,
         hash=0
     ))
-    print(channel_entity)
     result = []
     for message in m.messages:
         date = message.date
-        local_tz = pytz.timezone('Euroe/Minsk')
+        local_tz = pytz.timezone('Europe/Minsk')
         local_dt = date.replace(tzinfo=pytz.utc).astimezone(local_tz)
 
         user = client(GetFullUserRequest(
