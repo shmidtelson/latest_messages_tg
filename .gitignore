@@ -1,7 +1,9 @@
 *.session
+*.session-journal
 .idea
 .env
 Pipfile.lock
 /images
 *.json
 *.pyc
+
