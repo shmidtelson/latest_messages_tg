@@ -49,11 +49,10 @@ def get_latest_news():
             limit=1
         ))
 
-        dict_filepath = f'images/{user["user"]["id"]}.jpg'
-        client.download_media(photo.photos[0], os.path.join(PATH_TO_EXPORT_DATA, dict_filepath))
-
-        dict_id = message.id
         dict_message = message.message.replace("\n", "")
+        if (not len(dict_message)): continue
+        dict_filepath = f'images/{user["user"]["id"]}.jpg'
+        dict_id = message.id
         dict_name = f'{user["user"].get("first_name")} {user["user"].get("last_name", "")}'
         dict_date = local_dt.strftime('%Y-%m-%d %H:%I:%S')
 
@@ -64,6 +63,9 @@ def get_latest_news():
             'date': dict_date,
             'image_path': dict_filepath
         })
+
+        client.download_media(photo.photos[0], os.path.join(PATH_TO_EXPORT_DATA, dict_filepath))
+
     result = list(reversed(result))
     with open(os.path.join(PATH_TO_EXPORT_DATA, 'latest_tg_messages.json'), 'w') as fm:
         fm.write(json.dumps(result))
