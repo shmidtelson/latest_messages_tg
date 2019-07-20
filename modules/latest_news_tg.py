@@ -54,8 +54,8 @@ def get_latest_news():
 
         result.append({
             'id': message.id,
-            'name': f'{user["user"]["first_name"]} {user["user"]["last_name"]}',
-            'message': message.message,
+            'name': f'{user["user"].get("first_name")} {user["user"].get("last_name", "")}',
+            'message': message.message.rstrip(),
             'date': local_dt.strftime('%Y-%m-%d %H:%I:%S'),
             'image_path': filepath
         })
