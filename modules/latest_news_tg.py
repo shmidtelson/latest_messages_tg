@@ -1,6 +1,7 @@
 import os
 import pytz
 import json
+import logging
 from telethon import TelegramClient, functions, sync
 from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -9,6 +10,7 @@ from modules.client import client
 from settings import PATH_TO_EXPORT_DATA, GROUP_NAME, NAME, APP_ID, API_HASH
 
 def get_latest_news():
+    logging.info('Started get latest news')
     try:
         client = TelegramClient(NAME, APP_ID, API_HASH)
         client.start()
