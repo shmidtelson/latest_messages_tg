@@ -69,6 +69,6 @@ def get_latest_news():
 
         result = list(reversed(result))
         with open(os.path.join(PATH_TO_EXPORT_DATA, 'latest_tg_messages.json'), 'w') as fm:
-            fm.write(json.dumps(result)
+            fm.write(json.dumps(result))
     except Exception as e:
         print(e)
