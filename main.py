@@ -8,6 +8,8 @@ from modules.update_profile import run_update_profile
 
 if __name__ == '__main__':
     logging.basicConfig(filename="logs.log", level=logging.DEBUG)
+    logging.getLogger('faker').setLevel(logging.ERROR)
+    logging.getLogger('telethon').setLevel(logging.ERROR)
 
     schedule.every().hour.do(get_latest_news)
 
