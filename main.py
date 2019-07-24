@@ -14,7 +14,6 @@ if __name__ == '__main__':
     run_update_profile()
 
     schedule.every().hour.do(get_latest_news)
-    schedule.every().day.at("00:30").do(run_update_profile)
 
     while 1:
         schedule.run_pending()
