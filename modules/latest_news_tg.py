@@ -6,11 +6,13 @@ from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
 from modules.client import client
-from settings import PATH_TO_EXPORT_DATA, GROUP_NAME
-
+from settings import PATH_TO_EXPORT_DATA, GROUP_NAME, NAME, APP_ID, API_HASH
 
 def get_latest_news():
     try:
+        client = TelegramClient(NAME, APP_ID, API_HASH)
+        client.start()
+        
         for the_file in os.listdir(os.path.join(PATH_TO_EXPORT_DATA, 'images')):
             file_path = os.path.join(os.path.join(PATH_TO_EXPORT_DATA, 'images'), the_file)
             try:
