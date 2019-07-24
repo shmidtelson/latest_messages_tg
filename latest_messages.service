@@ -1,0 +1,13 @@
+[Unit]
+Description=Latest News admin bot
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/var/www/_hidden_scripts/latest_messages_tg
+ExecStart=/home/admin/.local/share/virtualenvs/latest_messages_tg-m-RKN4t0/bin/python /var/www/_hidden_scripts/latest_messages_tg/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
