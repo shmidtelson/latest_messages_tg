@@ -1,8 +1,7 @@
 import os
 import time
 import logging
-# import schedule
-import schedule as schedule
+import schedule
 
 from modules.latest_news_tg import get_latest_news
 from modules.update_profile import run_update_profile
