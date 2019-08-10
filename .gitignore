@@ -3,7 +3,6 @@
 .idea
 .env
 Pipfile.lock
-*.json
 *.pyc
 
 /output
