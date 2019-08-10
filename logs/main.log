@@ -1,0 +1,21 @@
+2019-08-10 13:42:34,799 - root - INFO - Started get latest news
+2019-08-10 13:42:47,545 - root - INFO - Started get latest news
+2019-08-10 13:42:47,692 - root - INFO - Getting 15
+2019-08-10 13:42:47,849 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:48,178 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:48,462 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:48,682 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:48,901 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:49,117 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:49,337 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:49,478 - telethon.client.users - INFO - Sleeping for 9s on flood wait
+2019-08-10 13:42:58,615 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:58,898 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:59,146 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:59,338 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:59,557 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:42:59,701 - telethon.client.users - INFO - Sleeping for 10s on flood wait
+2019-08-10 13:43:10,011 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:43:10,593 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:43:10,905 - telethon.client.downloads - INFO - Starting direct file download in chunks of 131072 at 0, stride 131072
+2019-08-10 13:43:10,979 - root - INFO - Written data

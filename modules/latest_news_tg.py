@@ -7,14 +7,13 @@ from telethon.tl.functions.messages import GetHistoryRequest
 from telethon.tl.functions.users import GetFullUserRequest
 
 from modules.client import client
-from settings import PATH_TO_EXPORT_DATA, GROUP_NAME, NAME, APP_ID, API_HASH
+from settings import PATH_TO_EXPORT_DATA, GROUP_NAME
 
 def get_latest_news():
     logging.info('Started get latest news')
     try:
-        client = TelegramClient(NAME, APP_ID, API_HASH)
-        client.start()
-        
+        result = []
+
         for the_file in os.listdir(os.path.join(PATH_TO_EXPORT_DATA, 'images')):
             file_path = os.path.join(os.path.join(PATH_TO_EXPORT_DATA, 'images'), the_file)
             try:
@@ -36,7 +35,9 @@ def get_latest_news():
             add_offset=0,
             hash=0
         ))
-        result = []
+
+        logging.info(f'Getting {len(m.messages)}')
+
         for message in m.messages:
             date = message.date
             local_tz = pytz.timezone('Europe/Minsk')
@@ -74,5 +75,6 @@ def get_latest_news():
         result = list(reversed(result))
         with open(os.path.join(PATH_TO_EXPORT_DATA, 'latest_tg_messages.json'), 'w') as fm:
             fm.write(json.dumps(result))
+            logging.info(f'Written data')
     except Exception as e:
         print(e)

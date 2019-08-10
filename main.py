@@ -1,15 +1,14 @@
 import os
 import time
-import logging
+import logging.config
 import schedule
-
+from settings import LOGGING_CONFIG
 from modules.latest_news_tg import get_latest_news
-from modules.update_profile import run_update_profile
 
 if __name__ == '__main__':
-    logging.basicConfig(filename="logs.log", level=logging.DEBUG)
-    logging.getLogger('faker').setLevel(logging.ERROR)
-    logging.getLogger('telethon').setLevel(logging.ERROR)
+    logging.config.dictConfig(LOGGING_CONFIG())
+
+    get_latest_news()
 
     schedule.every().hour.do(get_latest_news)
 
